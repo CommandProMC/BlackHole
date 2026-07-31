@@ -1,0 +1,19 @@
+﻿<Window x:Class="BlackHole.ConfirmationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlackHole"
+        mc:Ignorable="d"
+        Title="Confirm" Height="216" Width="454" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" WindowStyle="None" ShowInTaskbar="False" Background="Black" BorderBrush="#555555" BorderThickness="1">
+    <Grid RowDefinitions="*, auto">
+        <StackPanel Orientation="Vertical" Margin="16" Grid.Row="0">
+            <TextBlock Name="HeaderTextBlock" FontSize="24" FontWeight="SemiBold" Foreground="White" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" MaxHeight="100"/>
+            <TextBlock Text="It wil be permanently deleted" Foreground="White" FontSize="16" Margin="0,10,0,0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" Margin="16,0,16,16">
+            <Button Content="Yes" Width="72" Height="24" Click="YesButton_Click"/>
+            <Button Content="No" Width="72" Height="24" IsDefault="True" IsCancel="True" Margin="10,0,0,0" Click="NoButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.26100.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <AssemblyTitle>Black Hole</AssemblyTitle>
+    <ApplicationIcon>Assets\BlackHole.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\BlackHole.gif" />
+    <None Remove="Assets\BlackHole.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\BlackHole.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\BlackHole.gif" />
+    <Resource Include="Assets\BlackHole.png" />
+  </ItemGroup>
+
+</Project>
