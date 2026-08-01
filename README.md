@@ -5,5 +5,5 @@ The black hole app is one of the coolest ways to delete files. Just drag them on
 <ul>
   <li>Built using <a href="http://github.com/dotnet/wpf">WPF</a>. A cross-platform port would be appreciated!</li>
   <li>Files are deleted just before the animation begins, not after it ends</li>
-  <li>Deleting multiple files at a time and deleting folders are not supported yet</li>
+  <li>Deleting folders is not supported yet</li>
 </ul>

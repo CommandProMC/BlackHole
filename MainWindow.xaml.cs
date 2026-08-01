@@ -140,7 +140,7 @@ namespace BlackHole
             (sender as MediaElement).Play();
         }
 
-        private void BackdropImage_BufferingEnded(object sender, RoutedEventArgs e)
+        private void BackdropImage_MediaOpened(object sender, RoutedEventArgs e)
         {
             LoadingIndicator.Visibility = Visibility.Hidden;
         }
