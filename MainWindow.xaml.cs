@@ -61,6 +61,14 @@ namespace BlackHole
                 LoadingIndicator.Visibility = Visibility.Hidden;
             }
 
+            (this.Resources["FallInAnimation"] as Storyboard).Completed += (s, e) =>
+            {
+                FileIconContainer.Children.Remove(FileIcon);
+                FileIconContainer.Children.Clear();
+                FileIconContainer.Children.Add(FileIcon);
+                FileIcon.Source = null;
+            };
+
         }
 
         private void MainWindow_SourceInitialized(object? sender, EventArgs e)
@@ -77,7 +85,7 @@ namespace BlackHole
             DwmSetWindowAttribute(hwnd, DWMWA_USE_IMMERSIVE_DARK_MODE, ref darkmode, sizeof(int));
         }
 
-        private void Grid_Drop(object sender, DragEventArgs e)
+        private async void Grid_Drop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
@@ -94,6 +102,28 @@ namespace BlackHole
 
                     FileIcon.Source = FileIconHelper.GetFileIcon(files[0]);
                     File.Delete(files[0]);
+                }
+                else if (files != null && files.Length > 1)
+                {
+                    var cd = new ConfirmationWindow($"these {files.Length} files");
+                    cd.Owner = this;
+                    cd.ShowDialog();
+                    if (cd.DialogResult != true) return;
+
+                    var parentGrid = new Grid();
+                    foreach (var file in files)
+                    {
+                        var icon = new Image
+                        {
+                            Source = FileIconHelper.GetFileIcon(file),
+                            Stretch = Stretch.Uniform,
+                            RenderTransformOrigin = new Point(0.5, 0.5),
+                            RenderTransform = new RotateTransform(Random.Shared.Next(0, 359))
+                        };
+                        parentGrid.Children.Add(icon);
+                        File.Delete(file);
+                    }
+                    FileIconContainer.Children.Add(parentGrid);
                 }
 
                 (this.Resources["FallInAnimation"] as Storyboard).Begin();
