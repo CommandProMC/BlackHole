@@ -9,6 +9,16 @@
     <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
     <AssemblyTitle>Black Hole</AssemblyTitle>
     <ApplicationIcon>Assets\BlackHole.ico</ApplicationIcon>
+    <Company />
+    <Authors>CommandProMC</Authors>
+    <Product>Black Hole</Product>
+    <Description>A very cool way to delete files</Description>
+    <Copyright>Copyright © 2026 by CommandProMC</Copyright>
+    <PackageProjectUrl>http://github.com/CommandProMC/BlackHole</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>http://github.com/CommandProMC/BlackHole</RepositoryUrl>
+    <AssemblyVersion>1.1.0</AssemblyVersion>
+    <FileVersion>1.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +33,13 @@
   <ItemGroup>
     <Resource Include="Assets\BlackHole.gif" />
     <Resource Include="Assets\BlackHole.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
